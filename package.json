@@ -1,0 +1,31 @@
+{
+  "name": "puppeteer-pdf-cli",
+  "version": "1.0.0",
+  "description": "Pupeteer pdf cli",
+  "main": "index.js",
+  "scripts": {},
+  "bin": {
+    "puppeteer-pdf": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octavenz/puppeteer-pdf-cli.git"
+  },
+  "author": {
+    "name": "Namespace OU",
+    "email": "info@namespace.ee"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octavenz/puppeteer-pdf-cli/issues"
+  },
+  "homepage": "https://github.com/octavenz/puppeteer-pdf-cli#readme",
+  "dependencies": {
+    "commander": "^5.1.0",
+    "file-url": "^3.0.0",
+    "is-url": "^1.2.4",
+    "lodash": "^4.17.15",
+    "minimist": "^1.2.5",
+    "puppeteer": "^3.3.0"
+  }
+}
