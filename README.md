@@ -1,11 +1,10 @@
 # Puppeteer PDF CLI
 
+This is a fork of https://www.npmjs.com/package/puppeteer-pdf with updated dependencies and additional api.
+
+
 HTML to PDF from the command line with Puppeteer.
 
-[![GitHub stars](https://img.shields.io/github/stars/namespace-ee/puppeteer-pdf.svg?style=social&label=Stars)](https://github.com/namespace-ee/puppeteer-pdf)
-[![npm downloads](https://img.shields.io/npm/dt/puppeteer-pdf.svg)](https://npmjs.org/package/puppeteer-pdf)
-[![npm license](https://img.shields.io/npm/l/puppeteer-pdf.svg)](https://npmjs.org/package/puppeteer-pdf)
-[![npm version](https://img.shields.io/npm/v/puppeteer-pdf.svg)](https://npmjs.org/package/puppeteer-pdf)
 
 ## Help
 ```
@@ -33,6 +32,8 @@ puppeteer-pdf --help
     -ml, --marginLeft [margin]        Left margin, accepts values labeled with units.
     -d, --debug                       Output Puppeteer PDF options
     -wu, --waitUntil [choice]         waitUntil accepts choices load, domcontentloaded, networkidle0, networkidle2. Defaults to 'networkidle2'. (default: networkidle2)
+    -dl, --delay [milliseconds]       number of additional milliseconds to wait before rendering pdf', Defaults to 0
+    -em, --emulateMedia [mediatype]   print or screen. defaults to print.
     -h, --help                        output usage information
 ```
 
