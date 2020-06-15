@@ -9,14 +9,14 @@ const puppeteer = require('puppeteer');
 
 cli
     .version('1.3.0')
-    .option('-p, --path [path]', 'The file path to save the PDF to.')
+    .option('-p, --path <path>', 'The file path to save the PDF to.')
     .option('-s, --scale [scale]', 'Scale of the webpage rendering.', parseFloat, 1)
     .option('-dhf, --displayHeaderFooter', 'Display header and footer.', false)
     .option('-ht, --headerTemplate [template]', 'HTML template for the print header.')
     .option('-ft, --footerTemplate [template]', 'HTML template for the print footer.')
     .option('-pb, --printBackground', 'Print background graphics.', false)
     .option('-l, --landscape', 'Paper orientation.', false)
-    .option('-pr, --pageRanges [range]', "Paper ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which means print all pages.")
+    .option('-pr, --pageRanges <range>', "Paper ranges to print, e.g., '1-5, 8, 11-13'. Defaults to the empty string, which means print all pages.")
     .option('-f, --format [format]', "Paper format. If set, takes priority over width or height options. Defaults to 'Letter'.", 'Letter')
     .option('-w, --width [width]', 'Paper width, accepts values labeled with units.')
     .option('-h, --heigh [height]', 'Paper height, accepts values labeled with units.')
@@ -26,8 +26,8 @@ cli
     .option('-ml, --marginLeft [margin]', 'Left margin, accepts values labeled with units.')
     .option('-d, --debug', 'Output Puppeteer PDF options and log I/O.')
     .option('-wu, --waitUntil [choice]', "waitUntil accepts choices load, domcontentloaded, networkidle0, networkidle2. Defaults to 'networkidle2'.", 'networkidle2')
-    .option('-dl, --delay', 'number of additional milliseconds to wait before rendering pdf', 0)
-    .option('-em, --emulateMedia', 'print or screen. defaults to print', 'print')
+    .option('-dl, --delay <milliseconds>', 'number of additional milliseconds to wait before rendering pdf', parseInt, 0)
+    .option('-em, --emulateMedia <mediatype>', 'print or screen. defaults to print', 'print')
     .parse(process.argv);
 
 (async () => {
