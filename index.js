@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const _ = require('lodash');
 const cli = require('commander');
 const fileUrl = require('file-url');
@@ -62,33 +60,40 @@ cli
         }
     });
 
-    const browser = await puppeteer.launch({
-        dumpio: cli.debug,
-        args: ['--no-sandbox'],
-    });
+    try {
+        const browser = await puppeteer.launch({
+            dumpio: cli.debug,
+            args: ['--no-sandbox'],
+        });
 
-    const page = await browser.newPage();
+        const page = await browser.newPage();
 
-    // Get URL / file path from first argument
-    const location = _.first(cli.args);
-    await page.goto(isUrl(location) ? location : fileUrl(location), {
-        waitUntil: _.get(options, 'waitUntil', 'networkidle2'),
-    });
+        // Get URL / file path from first argument
+        const location = _.first(cli.args);
+        await page.goto(isUrl(location) ? location : fileUrl(location), {
+            waitUntil: _.get(options, 'waitUntil', 'networkidle2'),
+        });
 
 
-    if (options.emulateMedia) {
-        await page.emulateMedia(_.get(options, 'emulateMedia', 'screen'));
+        if (options.emulateMedia) {
+            await page.emulateMedia(_.get(options, 'emulateMedia', 'screen'));
+        }
+
+        // Output options if in debug mode
+        if (cli.debug) {
+            console.log(options);
+        }
+
+        if (options.delay) {
+            await page.waitFor(options.delay);
+        }
+
+        await page.pdf(options);
+        await browser.close();
+    } catch (exception) {
+        // make sure this thing dies if it catches an error
+        console.log(exception)
+        process.exit(1)
     }
 
-    // Output options if in debug mode
-    if (cli.debug) {
-        console.log(options);
-    }
-
-    if (options.delay) {
-        await page.waitFor(options.delay);
-    }
-
-    await page.pdf(options);
-    await browser.close();
 })();
