@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-pdf-cli",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Pupeteer pdf cli",
   "main": "index.js",
   "scripts": {},
@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/octavenz/puppeteer-pdf-cli#readme",
   "dependencies": {
-    "commander": "^5.1.0",
+    "commander": "^6.1.0",
     "file-url": "^3.0.0",
     "is-url": "^1.2.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "minimist": "^1.2.5",
-    "puppeteer": "^3.3.0"
+    "puppeteer": "^5.3.1"
   }
 }
