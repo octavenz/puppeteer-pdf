@@ -33,7 +33,7 @@ puppeteer-pdf --help
     -d, --debug                       Output Puppeteer PDF options
     -wu, --waitUntil [choice]         waitUntil accepts choices load, domcontentloaded, networkidle0, networkidle2. Defaults to 'networkidle2'. (default: networkidle2)
     -dl, --delay [milliseconds]       number of additional milliseconds to wait before rendering pdf', Defaults to 0
-    -em, --emulateMedia [mediatype]   print or screen. defaults to print.
+    -em, --emulateMediaType [mediatype]   print or screen. defaults to print.
     -h, --help                        output usage information
 ```
 

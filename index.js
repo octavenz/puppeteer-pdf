@@ -25,7 +25,7 @@ cli
     .option('-d, --debug', 'Output Puppeteer PDF options and log I/O.')
     .option('-wu, --waitUntil [choice]', "waitUntil accepts choices load, domcontentloaded, networkidle0, networkidle2. Defaults to 'networkidle2'.", 'networkidle2')
     .option('-dl, --delay <milliseconds>', 'number of additional milliseconds to wait before rendering pdf', parseInt, 0)
-    .option('-em, --emulateMedia <mediatype>', 'print or screen. defaults to print', 'print')
+    .option('-em, --emulateMediaType <mediatype>', 'print or screen. defaults to print', 'print')
     .parse(process.argv);
 
 (async () => {
@@ -75,8 +75,8 @@ cli
         });
 
 
-        if (options.emulateMedia) {
-            await page.emulateMedia(_.get(options, 'emulateMedia', 'screen'));
+        if (options.emulateMediaType) {
+            await page.emulateMediaType(_.get(options, 'emulateMediaType', 'screen'));
         }
 
         // Output options if in debug mode
