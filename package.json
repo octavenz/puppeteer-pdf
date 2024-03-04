@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-pdf-cli",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Pupeteer pdf cli",
   "main": "index.js",
   "scripts": {},
@@ -26,6 +26,6 @@
     "is-url": "^1.2.4",
     "lodash": "^4.17.21",
     "minimist": "^1.2.5",
-    "puppeteer": "^13.3.2"
+    "puppeteer": "^22.3.0"
   }
 }
